@@ -28,7 +28,7 @@ add_definitions(-D_GLIBCXX_USE_CXX11_ABI=1)
 
 
 # 主程序
-add_executable(mds_main main_gpu_base.cpp)
+add_executable(mds_main main_gpu.cpp)
 target_compile_options(mds_main PRIVATE ${TORCH_CXX_FLAGS})
 target_link_libraries(mds_main PRIVATE "${TORCH_LIBRARIES}")
 
