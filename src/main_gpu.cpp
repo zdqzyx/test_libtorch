@@ -5,10 +5,8 @@
 
 int main(int argc, char** argv) {
     // 解析命令行参数
-    std::string model_path = "../model/alstm_f56_cpu.pt";
-    if(argc>1){
-        model_path = argv[1];
-    }
+//    std::string model_path = "../model/alstm_f56_cpu.pt";
+    std::string model_path = argv[1];
     int batch_size = std::atoi(argv[2]);
     int seq_len = std::atoi(argv[3]);
     int input_size = std::atoi(argv[4]);

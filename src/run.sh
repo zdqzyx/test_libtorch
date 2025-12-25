@@ -70,3 +70,13 @@ wget https://developer.download.nvidia.com/compute/cudnn/9.3.0/local_installers/
 sudo rpm -i cudnn-local-repo-rhel9-9.3.0-1.0-1.x86_64.rpm
 
 
+
+
+
+
+./app ../model/alstm_f56_cpu.pt 500 240 56
+
+
+
+
+
