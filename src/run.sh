@@ -74,7 +74,7 @@ sudo rpm -i cudnn-local-repo-rhel9-9.3.0-1.0-1.x86_64.rpm
 
 
 
-./app ../model/alstm_f56_cpu.pt 500 240 56
+./mds_main ../model/alstm_f56_gpu.pt 5500 240 56
 
 
 
