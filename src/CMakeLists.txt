@@ -17,7 +17,7 @@ SET(CMAKE_CXX_FLAGS_RELEASE "${CMAKE_CXX_FLAGS} -O3 -Wall")
 
 # LibTorch配置
 # 请根据实际安装路径修改TORCH_PATH
-set(TORCH_PATH "/home/nescadmin/Code/libtorch_cpu")
+set(TORCH_PATH "/root/Code/libtorch_cu128/libtorch")
 list(APPEND CMAKE_PREFIX_PATH ${TORCH_PATH})
 find_package(Torch REQUIRED)
 
@@ -28,7 +28,7 @@ add_definitions(-D_GLIBCXX_USE_CXX11_ABI=1)
 
 
 # 主程序
-add_executable(mds_main main.cpp)
+add_executable(mds_main main_gpu_base.cpp)
 target_compile_options(mds_main PRIVATE ${TORCH_CXX_FLAGS})
 target_link_libraries(mds_main PRIVATE "${TORCH_LIBRARIES}")
 

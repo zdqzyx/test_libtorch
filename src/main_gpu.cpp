@@ -4,11 +4,11 @@
 #include <iostream>
 
 int main(int argc, char** argv) {
-    // 1. 设置模型路径
-    // std::string model_path = "/home/nescadmin/Code/NESC_MD_API/test/alstm_f56_cpu.pt";
-
     // 解析命令行参数
-    std::string model_path = argv[1];
+    std::string model_path = "../model/alstm_f56_cpu.pt";
+    if(argc>1){
+        model_path = argv[1];
+    }
     int batch_size = std::atoi(argv[2]);
     int seq_len = std::atoi(argv[3]);
     int input_size = std::atoi(argv[4]);
@@ -37,7 +37,6 @@ int main(int argc, char** argv) {
     // device = torch::Device(torch::kCPU);
 
 
-
     try {
         // 3. 加载 TorchScript 模型（假设是 .pt 文件）
         torch::jit::script::Module module = torch::jit::load(model_path, device);
@@ -49,7 +48,7 @@ int main(int argc, char** argv) {
 
         for(int i=0; i<10; i++){
 
-                    // 4. 构造输入张量（例：你的 (500,240,56)）
+            // 4. 构造输入张量（例：你的 (500,240,56)）
             // torch::Tensor input = torch::randn({500, 240, 56}, torch::kFloat32);
             torch::Tensor input = torch::randn({batch_size, seq_len, input_size}, torch::kFloat32);
             // 记录开始时间
