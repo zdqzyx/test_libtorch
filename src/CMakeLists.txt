@@ -17,7 +17,7 @@ SET(CMAKE_CXX_FLAGS_RELEASE "${CMAKE_CXX_FLAGS} -O3 -Wall")
 
 # LibTorch配置
 # 请根据实际安装路径修改TORCH_PATH
-set(TORCH_PATH "/root/Code/libtorch_cu128/libtorch")
+set(TORCH_PATH "/home/pkg/libtorch_cu128/libtorch")
 list(APPEND CMAKE_PREFIX_PATH ${TORCH_PATH})
 find_package(Torch REQUIRED)
 
